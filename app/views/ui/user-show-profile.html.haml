@@ -1,0 +1,66 @@
+.main
+  .main-inner
+    .container
+      .content
+        .row
+          .col-sm-4.col-lg-4
+            .sidebar
+              .widget
+                .user-photo
+                  =link_to "#" do
+                    =image_tag "agent-2.jpg", alt: "User Photo"
+                    %span.user-photo-action
+                      Profile image
+            .widget
+              %ul.menu-advanced
+                %li.active
+                  =link_to "#" do
+                    %i.fa.fa-user
+                    Edit profile
+                %li
+                  =link_to "#" do
+                    %i.fa.fa-pencil
+                    Add Company
+                %li
+                  =link_to "#" do
+                    %i.fa.fa-sign-out
+                    Logout
+          .col-sm-8
+            .background-white.p20.mb50
+              %h2.page-title
+                User profile
+              .form-horizontal
+                .form-group
+                  %label.col-sm-2.control-label
+                    First name:
+                  .col-sm-10.form-control-static
+                    Firstname
+                .form-group
+                  %label.col-sm-2.control-label
+                    Last name:
+                  .col-sm-10.form-control-static
+                    Lastname
+                .form-group
+                  %label.col-sm-2.control-label
+                    E-mail:
+                  .col-sm-10.form-control-static
+                    Email
+          .col-sm-8
+            %h2#reviews
+              5 Reviews
+            .comments
+              .comment
+                .comment-inner
+                  .comment-header
+                    %h2
+                      Company name
+                    %span.separator
+                      &#8226;
+                    %span.comment-date
+                      08/24/2015
+                  .comment-content-wrapper
+                    .comment-content
+                      %p
+                        Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. In congue mattis felis, non hendrerit orci dictum id.
+                      
+                

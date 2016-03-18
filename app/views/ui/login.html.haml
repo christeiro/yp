@@ -1,0 +1,22 @@
+.main
+  .main-inner
+    .container
+      .content
+        .row
+          .col-sm-6.col-sm-offset-4
+            .page-title
+              %h1
+                Login
+            =render 'shared/messages'
+            %form
+              .form-group
+                %label{for: "email"}
+                  Email
+                %input{class: "form-control", name: "email", id: "email"}
+              .form-group
+                %label{for: "password"}
+                  Password
+                %input{class: "form-control", name: "password", id: "password", type: "password"}
+              %button.btn.btn-primary.pull-right
+                Login
+           

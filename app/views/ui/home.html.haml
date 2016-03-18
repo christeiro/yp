@@ -1,0 +1,67 @@
+.main
+  .main-inner
+    .content
+      .container
+        .row
+          .col-sm-8.com-sm-offset-2.col-xs-12.col-xs-offset-0
+            .input-group
+              %input.form-control{placeholder:"Search for companies"}
+              %span.input-group-btn
+                %button.btn.btn-primary
+                  Search
+      .container    
+        %h2.page-title
+          Companies
+        .cards-row
+          .card-row
+            .card-row-inner
+              .card-row-image{"data-background-image" => image_path("product-1.jpg")}
+                .card-row-label
+                  =link_to "Comapny Name", nil
+              .card-row-body
+                %h2.card-row-title
+                  Company Name
+                .card-row-content
+                  %p
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+              .card-row-properties
+                %dl
+                  %dd
+                    Category:
+                  %dt
+                    Category Name
+                  %dd
+                    Location:
+                  %dt
+                    City Name
+                  %dd
+                    Reviews:
+                  %dt
+                    (10)
+          .card-row
+            .card-row-inner
+              .card-row-image{"data-background-image" => image_path("product-1.jpg")}
+                .card-row-label
+                  =link_to "Comapny Name", nil
+              .card-row-body
+                %h2.card-row-title
+                  Company Name
+                .card-row-content
+                  %p
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+              .card-row-properties
+                %dl
+                  %dd
+                    Category:
+                  %dt
+                    Category Name
+                  %dd
+                    Location:
+                  %dt
+                    City Name
+                  %dd
+                    Reviews:
+                  %dt
+                    (10)
+
+

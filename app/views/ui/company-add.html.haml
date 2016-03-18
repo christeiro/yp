@@ -1,0 +1,58 @@
+.main
+  .main-inner
+    .container
+      .row
+        .col-sm-8.col-lg-9
+          .content
+            =render 'shared/messages'
+            .page-title
+              %h1
+                Add New Company
+            .background-white.p30.mb30
+              %h3.page-title
+                Description
+              .form-group
+                %input.form-control{placeholder: "Name"}
+              .form-group
+                %textarea.form-control{placeholder: "Description of the company", rows: 8}
+            .background-white.p30.mb30
+              %h3.page-title
+                Attributes
+              .row
+                .col-sm-8
+                  .input-group
+                    %span.input-group-addon
+                      %i.fa.fa-building-o
+                    %input.form-control{placeholder: "Address"}
+                  .input-group
+                    %span.input-group-addon
+                      %i.fa.fa-map-o
+                    %input.form-control{placeholder: "City"}
+                  .input-group
+                    %span.input-group-addon
+                      %i.fa.fa-map-o
+                    %input.form-control{placeholder: "Country"}
+                  .input-group
+                    %span.input-group-addon
+                      %i.fa.fa-phone
+                    %input.form-control{placeholder: "Phone"}
+                  .input-group
+                    %span.input-group-addon
+                      %i.fa.fa-at
+                    %input.form-control{placeholder: "Email"}
+                  .input-group
+                    %span.input-group-addon
+                      %i.fa.fa-globe
+                    %input.form-control{placeholder: "WWW"}
+                  .form-group
+                    %select
+                      %option
+                        Category
+                      %option
+                        Category
+                      %option
+                        Category
+            .center
+              %button.btn.btn-primary.btn-xl
+                Create new company
+              

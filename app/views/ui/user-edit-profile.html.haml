@@ -1,0 +1,54 @@
+.main
+  .main-inner
+    .container
+      .content
+        .row
+          .col-sm-4.col-lg-4
+            .sidebar
+              .widget
+                .user-photo
+                  =link_to "#" do
+                    =image_tag "agent-2.jpg", alt: "User Photo"
+                    %span.user-photo-action
+                      Profile image
+            .widget
+              %ul.menu-advanced
+                %li.active
+                  =link_to "#" do
+                    %i.fa.fa-user
+                    Edit profile
+                %li
+                  =link_to "#" do
+                    %i.fa.fa-pencil
+                    Add Company
+                %li
+                  =link_to "#" do
+                    %i.fa.fa-sign-out
+                    Logout
+          .col-sm-8.col-lg-8
+            .content
+              .page-title
+                %h1
+                  Edit Profile
+              =render 'shared/messages'
+              .background-white.p20.mb30
+                %h3.page-title
+                  Personal information
+                  =link_to "Save", nil, class: "btn btn-primary btn-xs pull-right"
+                .row
+                  .form-group.col-sm-6
+                    %label
+                      First name
+                    %input.form-control
+                  .form-group.col-sm-6
+                    %label
+                      Last name
+                    %input.form-control
+                  .form-group.col-sm-6
+                    %label
+                      Email
+                    %input.form-control
+                  .form-group.col-sm-6
+                    %label
+                      Password
+                    %input.form-control

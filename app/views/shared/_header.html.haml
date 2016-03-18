@@ -1,0 +1,45 @@
+%header.header-minimal
+  .header-wrapper
+    .container-fluid
+      .header-inner
+        .header-logo
+          =link_to '#' do
+            =image_tag "logo.png"
+            %span
+              YP
+        .header-content
+          .header-bottom
+            %ul.header-nav-primary.nav.nav-pills.collapse.navbar-collapse
+              %li
+                =link_to "Companies", nil
+              %li
+                =link_to "Reviews", nil
+              %li
+                =link_to "Sign In", nil
+              %li
+                =link_to "Register", nil
+            %button.navbar-toggle.collapse{data: {toggle: "collapse", target: ".header-nav-primary"}}
+              %span.sr-only
+                Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            .header-nav-user
+              .dropdown
+                %button.btn.btn-default.dropdown-toggle#dropdownMenu1{data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "true"}}
+                  .user-image
+                    =image_tag "agent-2.jpg"
+                  %span.header-nav-user-name
+                    Full name
+                  %i.fa.fa-chevron-down
+                %ul.dropdown-menu{aria: {labelledby: "dropdownMenu1"}}
+                  %li
+                    =link_to "Show profile", nil
+                    =link_to "Edit profile", nil
+                    =link_to "Add Company", nil
+                    =link_to "Logout", nil
+
+
+
+
+

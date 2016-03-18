@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// require jquery
+// require jquery_ujs
+// require jquery.colorbox
+// require bootstrap-select
+// require owl.carousel
+// require_tree .
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.colorbox
+//= require jquery.flot
+//= require owl.carousel
+//= require bootstrap
+//= require bootstrap-select
 //= require_tree .

@@ -1,0 +1,95 @@
+.main
+  .main-inner
+    .content
+      .mt-80.mb80
+        .detail-banner{style: "background-image: url("+image_path("detail-banner-1.jpg")+");"}
+          .container
+            .detail-banner-left
+              .detail-banner-info
+                .detail-label
+                  Category
+              %h2.detail-title
+                Comapny Name
+              .detail-banner-address
+                %i.fa-fa-map-o
+                347/26 22nd Avenue, New York City, USA
+              / .detail-banner-rating
+              /   %i.fa.fa-star
+              /   %i.fa.fa-star
+              /   %i.fa.fa-star
+              /   %i.fa.fa-star-half-o
+              /   %i.fa.fa-star-o
+      .container
+        =render 'shared/messages'
+        .row.detail-content
+          .col-sm-7
+            %h2#reviews
+              Reviews
+            .reviews
+              .testimonial
+                .testimonial-image
+                  =image_tag "agent-3.jpg", alt: "Full name"
+                .testimonial-inner
+                  Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
+                  .testimonial-sign
+                    =link_to "- Full name", nil
+              .testimonial
+                .testimonial-image
+                  =image_tag "agent-2.jpg", alt: "Full name"
+                .testimonial-inner
+                  Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
+                  .testimonial-sign
+                    =link_to "- Full name", nil
+              .testimonial
+                .testimonial-image
+                  =image_tag "agent-1.jpg", alt: "Full name"
+                .testimonial-inner
+                  Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
+                  .testimonial-sign
+                    =link_to "- Full name", nil
+          .col-sm-5
+            %h2
+              About
+              %span.text-secondary
+                Company Name
+            .background-white.p20
+              .detail-vcard
+                .detail-logo
+                  =image_tag "pragmaticmates-logo.png"
+                .detail-contact
+                  .detail-contact-email
+                    %i.fa.fa-envelope-o
+                    company@example.com
+                  .detail-contact-phone
+                    %i.fa.fa-mobile.phone
+                    +01-23-456-789
+                  .detail-contact-website
+                    %i.fa.fa-globe
+                    www.launchschool.com
+                  .detail-contact-address
+                    %i.fa.fa-map-o
+                    Full address
+              .detail-description
+                %p
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          .col-sm-12
+            %h2
+              Add a review
+            %form.background-white.p20.add-review
+              .row
+                .form-group.col-sm-12
+                  %textarea.form-control{rows: 5}  
+              .row
+                .col-sm-4
+                  %button.btn.btn-primary.btn-block
+                    %i.fa.fa-star
+                    Submit Review
+                .col-sm-4
+                  %button.btn.btn-info.btn-block
+                    %i.fa.fa-star
+                    Cancel
+
+
+
+
+
