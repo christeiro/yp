@@ -16,12 +16,12 @@
           - @companies.each do |company|
             .card-row
               .card-row-inner
-                .card-row-image{"data-background-image" => image_path("product-1.jpg")}
+                .card-row-image{"data-background-image" => image_path("#{company.small_cover_url}")}
                   .card-row-label
-                    =link_to "Comapny Name", nil
+                    =link_to "#{company.name}", company_path(company.id)
                 .card-row-body
                   %h2.card-row-title
-                    = company.name
+                    = link_to "#{company.name}", company_path(company.id)
                   .card-row-content
                     %p
                       = company.description
