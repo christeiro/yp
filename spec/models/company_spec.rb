@@ -12,8 +12,8 @@ describe Company do
       expect(Company.recent_companies).to eq([pub, cafe])
     end
     it "returns all the companies if there are less than 5 companies" do
-      cafe = Fabricate(:company, created_at: 1.day.ago)
-      pub = Fabricate(:company)
+      Fabricate(:company, created_at: 1.day.ago)
+      Fabricate(:company)
       expect(Company.recent_companies.count).to eq(2)
     end
     it "returns 5 companies if there are more then 5 companies" do
