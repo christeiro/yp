@@ -11,9 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160320142224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "address"
+    t.string   "city"
+    t.string   "zipcode"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "website_url"
+    t.string   "small_cover_url"
+    t.string   "large_cover_url"
+    t.string   "logo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
+
+  add_index "companies", ["category_id"], name: "index_companies_on_category_id", using: :btree
+
+  add_foreign_key "companies", "categories"
 end
