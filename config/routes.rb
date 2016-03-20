@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'ui(/:action)', controller: 'ui'
   root to: "companies#index"
-  resources :companies, only: [ :show ]
+  resources :companies, only: [:show]
+  get 'register', to: "users#new"
+  resources :users, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
