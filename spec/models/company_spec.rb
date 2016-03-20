@@ -29,4 +29,12 @@ describe Company do
       expect(Company.recent_companies).to eq([])
     end
   end
+
+  describe "#category_name" do
+    it "returns the associated category name" do
+      category = Fabricate(:category, name: "Restaurants")
+      pizza = Fabricate(:company, category: category)
+      expect(pizza.category_name).to eq("Restaurants")
+    end
+  end
 end

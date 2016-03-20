@@ -24,7 +24,7 @@ mack = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: restaurants
+    category: restaurants
     )
 bastione = Company.create!(
     name: "Al Bastione",
@@ -39,7 +39,7 @@ bastione = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: restaurants
+    category: restaurants
 )
 davinci = Company.create!(
     name: "Da Vinci Pasta and Pizza",
@@ -54,7 +54,7 @@ davinci = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: restaurants
+    category: restaurants
 )
 attimo = Company.create!(
     name: "Attimo",
@@ -69,7 +69,7 @@ attimo = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: restaurants
+    category: restaurants
 )
 cookie = Company.create!(
     name: "Cookie Cafe",
@@ -84,7 +84,7 @@ cookie = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: restaurants
+    category: restaurants
 )
 shakedown = Company.create!(
     name: "ShakeDown Restaurant",
@@ -99,7 +99,7 @@ shakedown = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: restaurants
+    category: restaurants
 )
 harvad = Company.create!(
     name: "Harvard",
@@ -114,7 +114,7 @@ harvad = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: education
+    category: education
 )
 columbus = Company.create!(
     name: "Columbus",
@@ -129,7 +129,7 @@ columbus = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: education
+    category: education
 )
 hollywood = Company.create!(
     name: "Club Hollywood",
@@ -144,6 +144,6 @@ hollywood = Company.create!(
     small_cover_url: "gallery-#{(1..8).to_a.sample}",
     large_cover_url: "gallery-#{(1..8).to_a.sample}",
     logo_url: "logo-#{(1..10).to_a.sample}",
-    category_id: nightlife
+    category: nightlife
 )
 
