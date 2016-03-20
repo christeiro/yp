@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all
+    @companies = Company.recent_companies
   end
 end
