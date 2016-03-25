@@ -12,4 +12,34 @@ describe SessionsController do
       expect(response).to redirect_to root_path
     end
   end
+  describe "POST #create" do
+    context "with valid input" do
+      it "sets @session for the user" do
+        user = Fabricate(:user)
+        post :create, email: user.email, password: user.password
+        expect(session[:user_id]).to eq(user.id)
+      end
+      it "redirects to profile page" do
+        user = Fabricate(:user)
+        post :create, email: user.email, password: user.password
+        expect(response).to redirect_to user_path(user)
+      end
+      it "shows the notice" do
+        user = Fabricate(:user)
+        post :create, email: user.email, password: user.password
+        expect(flash[:notice]).not_to be_blank
+      end
+    end
+    context "with invalid input" do
+      it "redirects to sign in path" do
+        post :create, email: Faker::Internet.safe_email
+        expect(response).to redirect_to sign_in_path
+      end
+      it "sets the error message" do
+        post :create, email: Faker::Internet.safe_email
+        expect(flash[:error]).to be_present
+      end
+    end
+  end
+
 end

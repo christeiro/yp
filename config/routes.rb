@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'register', to: "users#create"
   get 'sign_in', to: "sessions#new"
   resources :sessions, only: [:create]
-  # resources :users, only: [:create]
+  resources :users, only: [:show]
 
 
 
