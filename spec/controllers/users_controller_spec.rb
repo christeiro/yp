@@ -42,16 +42,17 @@ describe UsersController do
       get :show, id: user.id
       expect(response).to render_template :show
     end
-    it "redirects to sign in path for unauthenticated user" do
-      user = Fabricate(:user)
-      get :show, id: user.id
-      expect(response).to redirect_to sign_in_path
-    end
-    it "sets @user for authenticated user" do
+    it "sets @user" do
       user = Fabricate(:user)
       session[:user_id] = user.id
       get :show, id: user.id
       expect(assigns(:user)).to eq(user)
+    end
+    it "sets @reviews variable" do
+      user = Fabricate(:user)
+      review = Fabricate(:review, user: user)
+      get :show, id: user.id
+      expect(assigns(:reviews)).to eq([review])
     end
   end
 end

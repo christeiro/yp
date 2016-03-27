@@ -15,5 +15,11 @@ describe CompaniesController do
       get :show, id: company.id
       expect(assigns(:company)).to eq(company)
     end
+    it "sets @reviews variable" do
+      company = Fabricate(:company)
+      review = Fabricate(:review, company: company)
+      get :show, id: company.id
+      expect(assigns(:reviews)).to eq([review])
+    end
   end
 end

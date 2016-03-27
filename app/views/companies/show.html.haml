@@ -39,44 +39,15 @@
                     = @company.address
               .detail-description
                 %p= @company.description
-          -#.col-sm-7
-          -#  %h2#reviews
-          -#    Reviews
-          -#  .reviews
-          -#    .testimonial
-          -#      .testimonial-image
-          -#        =image_tag "agent-3.jpg", alt: "Full name"
-          -#      .testimonial-inner
-          -#        Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
-          -#        .testimonial-sign
-          -#          =link_to "- Full name", nil
-          -#    .testimonial
-          -#      .testimonial-image
-          -#        =image_tag "agent-2.jpg", alt: "Full name"
-          -#      .testimonial-inner
-          -#        Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
-          -#        .testimonial-sign
-          -#          =link_to "- Full name", nil
-          -#    .testimonial
-          -#      .testimonial-image
-          -#        =image_tag "agent-1.jpg", alt: "Full name"
-          -#      .testimonial-inner
-          -#        Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. Donec vel enim sit amet lorem vulputate condimentum.
-          -#        .testimonial-sign
-          -#          =link_to "- Full name", nil
-          -#.col-sm-12
-          -#  %h2
-          -#    Add a review
-          -#  %form.background-white.p20.add-review
-          -#    .row
-          -#      .form-group.col-sm-12
-          -#        %textarea.form-control{rows: 5}
-          -#    .row
-          -#      .col-sm-4
-          -#        %button.btn.btn-primary.btn-block
-          -#          %i.fa.fa-star
-          -#          Submit Review
-          -#      .col-sm-4
-          -#        %button.btn.btn-info.btn-block
-          -#          %i.fa.fa-star
-          -#          Cancel
+          - @reviews.each do |review|
+            .col-sm-7
+              %h2#reviews
+                Reviews
+              .reviews
+                .testimonial
+                  .testimonial-image
+                    =image_tag "agent-3.jpg", alt: review.user.full_name
+                  .testimonial-inner
+                    = review.content
+                    .testimonial-sign
+                      =link_to "- #{review.user.full_name}", user_path(review.user_id)

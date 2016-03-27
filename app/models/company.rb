@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   belongs_to :category
-  has_many :reviews
+  has_many :reviews, -> { order "created_at DESC"}
   validates_uniqueness_of(:name)
   validates_presence_of(:name)
 

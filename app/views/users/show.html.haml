@@ -8,23 +8,9 @@
               .widget
                 .user-photo
                   =link_to "#" do
-                    =image_tag "agent-2.jpg", alt: "User Photo"
+                    =image_tag "agent-2.jpg", alt: @user.full_name
                     %span.user-photo-action
                       Profile image
-            .widget
-              %ul.menu-advanced
-                %li.active
-                  =link_to "#" do
-                    %i.fa.fa-user
-                    Edit profile
-                %li
-                  =link_to "#" do
-                    %i.fa.fa-pencil
-                    Add Company
-                %li
-                  =link_to "#" do
-                    %i.fa.fa-sign-out
-                    Logout
           .col-sm-8
             .background-white.p20.mb50
               %h2.page-title
@@ -34,31 +20,32 @@
                   %label.col-sm-2.control-label
                     First name:
                   .col-sm-10.form-control-static
-                    Firstname
+                    = @user.first_name
                 .form-group
                   %label.col-sm-2.control-label
                     Last name:
                   .col-sm-10.form-control-static
-                    Lastname
+                    = @user.last_name
                 .form-group
                   %label.col-sm-2.control-label
                     E-mail:
                   .col-sm-10.form-control-static
-                    Email
+                    = @user.email
           .col-sm-8
             %h2#reviews
-              5 Reviews
-            .comments
-              .comment
-                .comment-inner
-                  .comment-header
-                    %h2
-                      Company name
-                    %span.separator
-                      &#8226;
-                    %span.comment-date
-                      08/24/2015
-                  .comment-content-wrapper
-                    .comment-content
-                      %p
-                        Quisque aliquet ornare nunc in viverra. Nullam ornare molestie ligula in luctus. Suspendisse ac cursus elit. In congue mattis felis, non hendrerit orci dictum id.
+              = "#{@user.reviews.size} Review(s)"
+            - @reviews.each do |review|
+              .comments
+                .comment
+                  .comment-inner
+                    .comment-header
+                      %h2
+                        = link_to review.company.name, company_path(review.company)
+                      %span.separator
+                        &#8226;
+                      %span.comment-date
+                        = review.created_at
+                    .comment-content-wrapper
+                      .comment-content
+                        %p
+                          = review.content

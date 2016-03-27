@@ -4,7 +4,7 @@ describe Company do
   it { should belong_to(:category) }
   it { should validate_uniqueness_of(:name)}
   it { should validate_presence_of(:name)}
-  it { should have_many(:reviews) }
+  it { should have_many(:reviews).order("created_at DESC") }
 
   describe "#recent_companies" do
     it "returns the companies in the reverse chronical order by created_at" do

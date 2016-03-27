@@ -147,3 +147,5 @@ hollywood = Company.create!(
     category: nightlife
 )
 
+user = User.create!(first_name: "John", last_name: "Smith", email: "john@example.com", password: "test")
+Review.create!(content: Faker::Lorem.paragraph(3), user: user, company: hollywood)
