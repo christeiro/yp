@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'register', to: "users#new"
   post 'register', to: "users#create"
   get 'sign_in', to: "sessions#new"
+  get 'sign_out', to: "sessions#destroy"
   resources :sessions, only: [:create]
   resources :users, only: [:show]
 

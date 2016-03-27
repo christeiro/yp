@@ -14,4 +14,9 @@ class SessionsController < ApplicationController
       redirect_to sign_in_path
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: "You've been signed out!"
+  end
 end
