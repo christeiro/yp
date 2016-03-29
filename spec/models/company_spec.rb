@@ -38,4 +38,27 @@ describe Company do
       expect(pizza.category_name).to eq("Restaurants")
     end
   end
+
+  describe "#full_address" do
+    it "returns the full address of the company" do
+      company = Fabricate(:company, address: "32 Street name", city: "Los Angeles", zipcode: "123456")
+      expect(company.full_address).to eq("32 Street name, Los Angeles 123456")
+    end
+    it "returns address and city" do
+      company = Fabricate(:company, address: "32 Street name", city: "Los Angeles", zipcode: nil)
+      expect(company.full_address).to eq("32 Street name, Los Angeles")
+    end
+    it "returns city and zipcode" do
+      company = Fabricate(:company, address: nil, city: "Los Angeles", zipcode: "123456")
+      expect(company.full_address).to eq("Los Angeles 123456")
+    end
+    it "returns address and zipcode" do
+      company = Fabricate(:company, address: "32 Street Name", city: nil, zipcode: "123456")
+      expect(company.full_address).to eq("32 Street Name, 123456")
+    end
+    it "returns empty string if no values exist" do
+      company = Fabricate(:company, address: nil, city: nil, zipcode: nil)
+      expect(company.full_address).to eq("")
+    end
+  end
 end

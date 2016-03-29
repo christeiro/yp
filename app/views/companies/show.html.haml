@@ -12,7 +12,7 @@
                 = @company.name
               .detail-banner-address
                 %i.fa-fa-map-o
-                = @company.address
+                = @company.full_address
       .container
         .row.detail-content
           .col-sm-5
@@ -36,7 +36,7 @@
                     = @company.website_url
                   .detail-contact-address
                     %i.fa.fa-map-o
-                    = @company.address
+                    = @company.full_address
               .detail-description
                 %p= @company.description
           - @reviews.each do |review|

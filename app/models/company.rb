@@ -11,4 +11,9 @@ class Company < ActiveRecord::Base
   def category_name
     category.name
   end
+
+  def full_address
+    zip_address = [self.city, self.zipcode].select(&:present?).join(' ')
+    [self.address, zip_address].select(&:present?).join(', ')
+  end
 end
