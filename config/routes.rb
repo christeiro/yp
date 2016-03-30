@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'ui(/:action)', controller: 'ui'
   root to: "companies#index"
-  resources :companies, only: [:show]
+  resources :companies, only: [:show] do
+    resources :reviews, only: [:create]
+  end
   get 'register', to: "users#new"
   post 'register', to: "users#create"
   get 'sign_in', to: "sessions#new"

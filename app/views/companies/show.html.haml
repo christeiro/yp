@@ -51,3 +51,21 @@
                     = review.content
                     .testimonial-sign
                       =link_to "- #{review.user.full_name}", user_path(review.user_id)
+          .col-sm-12
+            %h2
+              Add a review
+            -#%form.background-white.p20.add-review
+            = form_for [@company, Review.new] do |f|
+              .row
+                .form-group.col-sm-12
+                  -#%textarea.form-control{rows: 5}
+                  = f.text_area :content, class: 'form-control', rows: 5
+              .row
+                .col-sm-4
+                  %button.btn.btn-primary.btn-block
+                    %i.fa.fa-star
+                    Submit Review
+                .col-sm-4
+                  %button.btn.btn-info.btn-block
+                    %i.fa.fa-star
+                    = link_to "Cancel", @company
