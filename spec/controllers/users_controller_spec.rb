@@ -18,6 +18,10 @@ describe UsersController do
         post :create, user: Fabricate.attributes_for(:user)
         expect(User.count).to eq(1)
       end
+      it "sets the flash notice" do
+        post :create, user: Fabricate.attributes_for(:user)
+        expect(flash).to be_present
+      end
     end
 
     context "with invalid input" do
