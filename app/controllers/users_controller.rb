@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to sign_in_path, notice: "Your account was created successfully!"
     else
+      flash[:error] = "Please fix the form errors!"
       render :new
     end
   end

@@ -37,6 +37,10 @@ describe UsersController do
         post :create, user: {first_name: Faker::Name.first_name }
         expect(assigns(:user)).to be_instance_of(User)
       end
+      it "sets the flash notice" do
+        post :create, user: {first_name: Faker::Name.first_name }
+        expect(flash).to be_present
+      end
     end
   end
   describe "GET :show" do
