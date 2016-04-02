@@ -28,7 +28,8 @@ feature "User Sign's up" do
 
     expect(page).to have_content("Please fix the form errors!")
     expect(find_field("user_first_name").value).to eq(user[:first_name])
-    expect(find_field("user_last_name").value).to eq(user[:last_name])
-    expect(find_field("user_email").value).to eq(user[:email])
+    expect(page).to have_field("First name", with: user[:first_name])
+    expect(page).to have_field("Last name", with: user[:last_name])
+    expect(page).to have_field("Email", with: user[:email])
   end
 end
