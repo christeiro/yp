@@ -3,6 +3,7 @@
     .container
       .content
         .row
+          = render 'shared/messages'
           .col-sm-4.col-lg-4
             .sidebar
               .widget
@@ -44,7 +45,7 @@
                       %span.separator
                         &#8226;
                       %span.comment-date
-                        = review.created_at
+                        = format_date(review.created_at)
                     .comment-content-wrapper
                       .comment-content
                         %p
